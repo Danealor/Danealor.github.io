@@ -1,4 +1,4 @@
 Danealor.github.io
 ==================
 
-Minecraft Mods &amp; Filters
+Personal Projects &amp Endeavours
