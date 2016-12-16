@@ -1,53 +1,138 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>Danealoria by Danealor</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript">
-    var host = "danealor.com";
-    if ((host == window.location.host) && (window.location.protocol != "https:"))
-        window.location.protocol = "https";
-    </script>
-    <link rel="canonical" href=" { { site.url } }{ { page.url } }" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">Danealoria</h1>
-      <h2 class="project-tagline">Personal Projects and Endeavours</h2>
-    </section>
+﻿<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Danealoria</title>
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript">
+        var host = "www.danealor.com";
+        if ((host == window.location.host) && (window.location.protocol != "https:"))
+            window.location.protocol = "https";
+        </script>
 
-    <section class="main-content">
-      <h1>
-<a id="welcome-to-danealoria" class="anchor" href="#welcome-to-danealoria" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to Danealoria</h1>
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+        <link rel="manifest" href="manifest.json">
+        <link rel="mask-icon" href="safari-pinned-tab.svg" color="#8c2a14">
+        <meta name="theme-color" content="#ffffff">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,100|Roboto+Condensed:700" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="canonical" href="{ { site.url } }{ { page.url } }" />
 
-<p>Hi! I am Amit Blonder, and here is the hub for some of my personal projects and endeavours.</p>
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <ul class="nav">
+            <li class="logo"><a href="index.html"><img src="tile-wide.png" /></a></li>
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="tpgw.html">TPGW</a></li>
+            <li><a href="ubnl.html">UBNL</a></li>
+            <li><a href="robot.html">Robot Arm</a></li>
+            <li><a href="java.html">Java</a></li>
+            <li><a href="asp.html">ASP</a></li>
+            <li style="float:right"><a href="about.html">About</a></li>
+        </ul>
 
-<h2>
-<a id="personal-projects" class="anchor" href="#personal-projects" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Personal Projects</h2>
+        <div id="intro" class="header-container fs">
+            <div class="bcg"></div>
+            <header class="wrapper">
+                <h1 class="title">Danealor's Code Warehouse</h1>
+                <p>Hi! I am Amit Blonder, and here is the hub for some of my personal projects and endeavours.</p>
+            </header>
+            <span class="scroll-hint">Scroll Down</span>
+        </div>
+        <nav class="is-light">
+            <ul>
+                <li><a href="#intro"><span class="nav-dot"></span><span class="nav-label">Intro</span></a></li>
+                <li><a href="#slide01"><span class="nav-dot"></span><span class="nav-label">WPF</span></a></li>
+                <li><a href="#slide02"><span class="nav-dot"></span><span class="nav-label">Arduino</span></a></li>
+                <li><a href="#slide03"><span class="nav-dot"></span><span class="nav-label">C++</span></a></li>
+            </ul>
+        </nav>
+        <div class="main-container">
+            <article id="cb01" class="content-block">
+                <div class="wrapper">
+                    <header class="slideInUp">
+                        <h1>LANGUAGE</h1>
+                    </header>
+                    <section>
+                        <p class="slideInUp slideInUp2">I have expressed my code creation in multiple forms.</p>
+                    </section>
+                </div> <!-- .wrapper -->
+            </article>
 
-<h3>
-<a id="old-aspnet-website" class="anchor" href="#old-aspnet-website" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Old ASP.NET Website</h3>
+            <article id="slide01" class="slide fs is-light">
+                <div class="bcg"></div>
+                <div class="wrapper">
+                    <header class="slideInUp">
+                        <h1>WPF - Windows Presentation Foundation</h1>
+                    </header>
+                    <section>
+                        <p class="slideInUp slideInUp2">A combination of C# and XAML, WPF is my greatest asset in creating Windows data applications.</p>
+                        <div class="slideInUp slideInUp3">
+                            <a href="tpgw.html" class="button">LEARN MORE</a>
+                        </div>
+                    </section>
+                </div> <!-- .wrapper -->
+            </article>
+            <article id="slide02" class="slide fs is-light">
+                <div class="bcg"></div>
+                <div class="wrapper">
+                    <header class="slideInUp">
+                        <h1>Arduino</h1>
+                    </header>
+                    <section>
+                        <p class="slideInUp slideInUp2">The Arduino language is a modified C for programming ATmega microcontrollers.</p>
+                        <p class="slideInUp slideInUp3">I have used it to automate robotic arms and as an RS232 to special SPI communication buffer.</p>
+                        <div class="slideInUp slideInUp4">
+                            <a href="robot.html" class="button">LEARN MORE</a>
+                        </div>
+                    </section>
+                </div> <!-- .wrapper -->
+            </article>
+            <article id="slide03" class="slide fs is-dark">
+                <div class="bcg"></div>
+                <div class="wrapper">
+                    <header class="slideInUp">
+                        <h1>C++</h1>
+                    </header>
+                    <section>
+                        <p class="slideInUp slideInUp2">I use embedded C++ to work with my team to get a satellite to space!</p>
+                        <div class="slideInUp slideInUp3">
+                            <a href="ubnl.html" class="button">LEARN MORE</a>
+                        </div>
+                    </section>
+                </div> <!-- .wrapper -->
+            </article>
+        </div> <!-- #main-container -->
 
-<p>This website is hosted with ASP.NET, and is the product of a computer science class in Israel. The theme of this website is diversity, and includes login, sessions, authentication and forums, and even a Flash game. All custom code was written by me. You can find the website at <a href="http://old.danealor.com">old.danealor.com</a></p>
-      
-      <pre><code>
-string s = "C++ is the best!";
-s.Replace("++","#");
-System.Console.WriteLine(s);
-</code></pre>
-      
-      <footer class="site-footer">
+        <div class="footer-container">
+            <footer class="wrapper">
+                <h3>2016 &copy; <a href="https://danealor.com" target="_blank">danealor.com</a> | <a href="https://linkedin.com/in/amit-blonder-963189127" target="_blank">Amit Blonder</a></h3>
+            </footer>
+        </div>
 
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
-    </section>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
 
-  
-  </body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/plugins/ScrollToPlugin.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+
+        <script src="js/main.js"></script>
+    </body>
 </html>

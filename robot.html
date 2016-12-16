@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Robot Arm</title>
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript">
+        var host = "www.danealor.com";
+        if ((host == window.location.host) && (window.location.protocol != "https:"))
+            window.location.protocol = "https";
+        </script>
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+        <link rel="manifest" href="manifest.json">
+        <link rel="mask-icon" href="safari-pinned-tab.svg" color="#8c2a14">
+        <meta name="theme-color" content="#ffffff">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/dane-styles.css">
+        <link rel="stylesheet" href="css/stylesheet.css">
+        <link rel="canonical" href="{ { site.url } }{ { page.url } }" />
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    </head>
+    <body>
+        <ul class="nav">
+            <li class="logo"><a href="index.html"><img src="tile-wide.png" /></a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tpgw.html">TPGW</a></li>
+            <li><a href="ubnl.html">UBNL</a></li>
+            <li class="active"><a href="robot.html">Robot Arm</a></li>
+            <li><a href="java.html">Java</a></li>
+            <li><a href="asp.html">ASP</a></li>
+            <li style="float:right"><a href="about.html">About</a></li>
+        </ul>
+
+        <section class="container-fluid page-header text-center">
+            <h1 class="project-name">Robot Arm</h1>
+            <h2 class="project-tagline">Raspberry Pi, Arduino and Lynxmotion Robot Arm</h2>
+        </section>
+
+        <section class="container">
+            <h1 class="green">
+                <a id="Arduino" class="anchor" href="#arduino" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Arduino/Python
+            </h1>
+
+            <div class="container">
+                <div class="thumbnail">
+                    <img src="img/PiUI.jpg" alt="Raspberry PI GUI" style="width:100%">
+                    <div class="caption">
+                        <p>Visual Studio and Visual Studio Blend provide powerful tools for editing the graphical user interface and binding properties to create friendly, responsive behavior.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Operating Description</h2>
+            <p>The Arduino is the control center for the servos; it oversees the smooth motion of the servos and serves a buffer to the angle-destination commands sent in by the Raspberry Pi. The Arduino handles speed control, angle offsets and balancing, and serial communication with the Pi. The Raspberry Pi, along with the HDMI 7” 800x480 Capacitive Touch LCD, serves as the Graphical User Interface (GUI) for control of the Robot Arm. The Pi’s programming is written in Python 3.2.4, and serves a plethora of function to convert from user input to angular serial output. It shows a top-down view of the Competition Area, with all scorable items, dice and goals, absolutely to scale where 1px = 6cm. The GUI allows the user to select two “B” slots in each egg carton and will automatically calculate the quickest path to attain the greatest amount of points through a Pythonic recursive algorithm, prioritizing matching goals and “B” slots, although shying away from corner “B”’s, which the Robot Arm can’t reach.</p>
+	        <p>The path is calculated in Cartesian coordinates, with wrist and rotation angles, and is converted to radial and then angular coordinates for the servos through Inverse Kinematics, self-checked with Forward Kinematics and accounting for all variance in dimensions of the wrist movement, as well as sag experienced by straining the load-bearing spring by reaching far. The Pi will also attempt to “flick” the wrist in order to reach distant points otherwise unreachable. Completing these calculations, the Pi will automatically execute the series of commands, transmitting them to the Arduino to control the Robot Arm, which returns with feedback on expected position of the end effector of the Robot Arm, which is subsequently displayed on the screen through Forward Kinematics.</p>
+	        <p>In the case of technical or mechanical failure, the user is able to skip parts of the sequence by hitting “Abort” or “Pause”, which will take them to the Manual Override screen pictured above from which they can continue their execution later. The Manual Override screen provides a touch-responsive GUI which allows the user to tap any point within the Competition Area on the screen to command the Robot Arm to move to that position through Inverse Kinematics, with options to control height, wrist, wrist rotation, gripper/vacuum activation and preset positions. ALL code, in both the Arduino and the Raspberry Pi Python program, was created by Amit. Every. Single. Line.</p>
+	        <p>Positioning of the end effector, whether it be the gripper or the suction cup, is controlled by the base servo (1), shoulder servo (2), and elbow servo (3). The wrist servo (4) levels the end effector and switches between the two end effectors. The gripper rotation servo (5) rotates the gripper, as necessary. The gripper servo (6) and vacuum servo (7) are activated when picking up items from the Competition Area.</p>
+            
+            <h2>Proposed Plan of Movement</h2>
+            <ol>
+                <li>The Robot Arm will move to pick up each ping pong ball, from South to North, and place it in the closest “B” slots of the egg cartons, prioritizing the East goal, if possible.</li>
+                <li>The Robot Arm will then move to pick up each pencil, from North to South, and place it in the West goal.</li>
+                <li>The Robot Arm will then pick up each lego piece and attempt to place it in the North goal.</li>
+                <li>Finally, the Robot Arm will attempt to grab each die, hover it over the center, flip it, place it down, pick it back up, flip it again, and replace it at its original position, in order to achieve four dice with the number 6 facing up.</li>
+            </ol>
+            <p><span class="glyphicon glyphicon-chevron-right"></span> The plan of movement is subject to change during event, whereby the user may choose to interrupt the automatic execution to correct any errors.</p>
+
+            <h2>Practice Log:</h2>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <tr>
+                        <td>Trial</td>
+                        <td>Time</td>
+                        <td>Score</td>
+                        <td>Score Attained Automatically</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>3:00</td>
+                        <td>51</td>
+                        <td>35</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>3:00</td>
+                        <td>47</td>
+                        <td>31</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>2:52</td>
+                        <td>47</td>
+                        <td>35</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>2:56</td>
+                        <td>53</td>
+                        <td>27</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>2:54</td>
+                        <td>55</td>
+                        <td>35</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>3:00</td>
+                        <td>55</td>
+                        <td>39</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>2:45</td>
+                        <td>53</td>
+                        <td>35</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>2:50</td>
+                        <td>51</td>
+                        <td>39</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>3:00</td>
+                        <td>47</td>
+                        <td>35</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>2:55</td>
+                        <td>51</td>
+                        <td>35</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <a href="img/hit.jpg">
+                            <img src="img/hit.jpg" alt="Hit" style="width:100%">
+                            <div class="caption">
+                                <p>The robot navigates to the pencil and picks it up.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <a href="img/robot-arm.jpg">
+                            <img src="img/robot-arm.jpg" alt="Robot Arm" style="width:100%">
+                            <div class="caption">
+                                <p>A modified lynxmotion robot arm with Raspberry Pi and Arduino</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <a href="img/fail.jpg">
+                            <img src="img/fail.jpg" alt="Fail" style="width:100%">
+                            <div class="caption">
+                                <p>Don't hit your control circuitry!</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <pre><code>
+                string s = "C++ is the best!";
+                s.Replace("++","#");
+                System.Console.WriteLine(s);
+            </code></pre>
+        </section>
+
+        <div class="footer-container">
+            <footer class="wrapper">
+                <h3>2016 &copy; <a href="https://danealor.com" target="_blank">danealor.com</a> | <a href="https://linkedin.com/in/amit-blonder-963189127" target="_blank">Amit Blonder</a></h3>
+            </footer>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+</html>
