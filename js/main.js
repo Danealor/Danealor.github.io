@@ -2,6 +2,10 @@
     // Init PushPad
     pushpad('widget');
 
+    // Ask for PushPad subsciprtion
+    if (window.sessionStorage.getItem('notification-status') != 'subscribed')
+        pushpad('subscribe', function () { window.sessionStorage.setItem('notification-status', 'subscribed'); });
+
     // Init ScrollMagic
     var controller = new ScrollMagic.Controller();
 
