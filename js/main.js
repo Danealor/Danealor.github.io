@@ -1,6 +1,8 @@
 (function ($) {
+    // Init PushPad
+    pushpad('widget');
 
-	// Init ScrollMagic
+    // Init ScrollMagic
     var controller = new ScrollMagic.Controller();
 
     // get all slides
